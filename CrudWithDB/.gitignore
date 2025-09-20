@@ -1,0 +1,12 @@
+/build/
+# Ignore config.properties file
+config.properties
+
+# Optional: Ignore compiled classes and IDE metadata
+/bin/
+/target/
+/*.class
+*.log
+.settings/
+.project
+.classpath
