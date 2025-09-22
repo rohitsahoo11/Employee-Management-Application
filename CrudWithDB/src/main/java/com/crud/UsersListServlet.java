@@ -36,9 +36,9 @@ public class UsersListServlet extends HttpServlet{
 
 			pro.load(input);
 			
-			String url = pro.getProperty("db.url");
-			String userName = pro.getProperty("db.username");
-			String pwd = pro.getProperty("db.password");
+			String url = System.getenv("db_url");
+			String userName = System.getenv("db_username");
+			String pwd = System.getenv("db_password");
 			String driver = pro.getProperty("db.driver");
 			
 			Class.forName(driver);
