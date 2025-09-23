@@ -4,7 +4,7 @@ config.properties
 
 # Optional: Ignore compiled classes and IDE metadata
 /bin/
-/target/
+
 /*.class
 *.log
 .settings/
