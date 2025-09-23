@@ -1,25 +1,13 @@
-# Step 1: Build WAR using Maven
-FROM maven:3.9.6-eclipse-temurin-21 AS build
-
-# Set working directory
-WORKDIR /app
-
-# Copy source code
-COPY . .
-
-# Run Maven to build the WAR file
-RUN mvn clean package -DskipTests
-
-# Step 2: Use Tomcat to run the WAR
+# Step 1: Use Tomcat base image
 FROM tomcat:10.1-jdk21
 
 # Remove default ROOT app
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Copy WAR built in first stage
-COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
+# Copy WAR (make sure you export it from Eclipse first)
+COPY myapp.war /usr/local/tomcat/webapps/ROOT.war
 
-# (Optional) Copy PostgreSQL JDBC driver into Tomcat lib if needed
+# If you need PostgreSQL driver, copy it too (optional)
 # COPY lib/postgresql-42.7.8.jar /usr/local/tomcat/lib/
 
 # Expose port
