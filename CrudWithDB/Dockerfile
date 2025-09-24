@@ -8,7 +8,7 @@ RUN rm -rf /usr/local/tomcat/webapps/ROOT
 COPY myapp.war /usr/local/tomcat/webapps/ROOT.war
 
 # If you need PostgreSQL driver, copy it too (optional)
-# COPY lib/postgresql-42.7.8.jar /usr/local/tomcat/lib/
+COPY lib/postgresql-42.7.8.jar /usr/local/tomcat/lib/
 
 # Expose port
 EXPOSE 8080
