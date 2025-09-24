@@ -1,5 +1,5 @@
 # Step 1: Use Tomcat base image
-FROM tomcat:10.1-jdk21
+FROM tomcat:10.1-jdk20
 
 # Remove default ROOT app
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
